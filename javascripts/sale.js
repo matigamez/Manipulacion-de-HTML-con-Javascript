@@ -54,7 +54,7 @@ function add() {
 }
 
 function display() {
-  let string = "Se añadio ";
+  let string = "Se añadio: \n";
   for(let i=0; i<purchases.length; i++){
     string += `${purchases[i].number} de ${purchases[i].producto.name} al carrito, con un precio de ${purchases[i].producto.price}円 la unidad \n`;
   }
@@ -72,7 +72,7 @@ function subtotal() {
 function calc() {
   const sum = subtotal();
   const postage = calcPostageFromPurchase(sum);
-  window.alert(`La compra tiene un costo total de ${sum}円, el envio un costo de ${postage}円 El total es: ${sum + postage}円\n Gracias Por la Compra`);
+  window.alert(`${display()}\nLa compra tiene un costo total de ${sum}円, el envio un costo de ${postage}円\nEl total es: ${sum + postage}円\nGracias Por la Compra`);
   purchases = [];
   priceElement.value= "";
   numberElement.value = "";
